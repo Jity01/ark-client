@@ -36,24 +36,24 @@ export function ChatPanel({
 
   const exampleMessages = [
     {
-      heading: 'What are the',
-      subheading: 'trending memecoins today?',
-      message: `What are the trending memecoins today?`
+      heading: 'When am I free',
+      subheading: 'this week for a 2-hour meeting?',
+      message: `When am I free this week for a 2-hour meeting?`
     },
     {
-      heading: 'What is the price of',
-      subheading: '$DOGE right now?',
-      message: 'What is the price of $DOGE right now?'
+      heading: 'Mark 18.06 PSET',
+      subheading: 'as completed!',
+      message: 'Mark 18.06 PSET PSET 8 as completed!'
     },
     {
-      heading: 'I would like to buy',
-      subheading: '42 $DOGE',
-      message: `I would like to buy 42 $DOGE`
+      heading: 'Send a daily summary',
+      subheading: 'of my schedule at 7 AM.',
+      message: `Send a daily summary of my schedule at 7 AM.`
     },
     {
-      heading: 'What are some',
-      subheading: `recent events about $DOGE?`,
-      message: `What are some recent events about $DOGE?`
+      heading: 'Prioritize "budget analysis"',
+      subheading: `over other tasks.`,
+      message: `Prioritize "budget analysis" over other tasks.`
     }
   ]
 
