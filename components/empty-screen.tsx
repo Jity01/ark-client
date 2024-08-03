@@ -8,6 +8,19 @@ import { Input } from './ui/input'
 
 export function EmptyScreen() {
   const [googleUrl, setGoogleUrl] = useState("");
+  const [prompt, setPrompt] = useState("");
+  const [completion, setCompletion] = useState("");
+  const handleSubmit = async () => {
+    const response = await fetch("http://localhost:3000/generate",
+      {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ prompt })
+      }
+    )
+    const responseJSON = await response.json()
+    setCompletion(responseJSON.generatedText)
+  }
   return (
     <div className="mx-auto max-w-2xl px-4">
       <div className="flex flex-col gap-2 rounded-lg border bg-background p-8">
@@ -34,12 +47,23 @@ export function EmptyScreen() {
               width="800"
               height="600"
               scrolling="no" /> :
-            <input
+            completion.length > 0 ?
+            <p>{completion}</p>
+            :
+            <div><input
               value={googleUrl}
               onChange={
                 (e) => setGoogleUrl(e.target.value)
               }
             />
+            <input
+              value={prompt}
+              onChange={
+                (e) => setPrompt(e.target.value)
+              }
+            />
+            <button type="submit" onClick={handleSubmit}>generate</button>
+            </div>
           }
          </p>
       </div>
